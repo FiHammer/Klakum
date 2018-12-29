@@ -8,9 +8,7 @@ from KlakumLib import *
 
 
 class Server(threading.Thread):
-    def __init__(self, port: int, react, ip=socket.gethostbyname(socket.gethostname()), buffersize=1024,
-                 loginName=None, loginPW=None, maxConnections=1, Seculevel=0, BigServerBuffersize=536870912,
-                 BigServerPort=0, welcomeMessage="", thisBig=False):
+    def __init__(self, port: int, react, ip=socket.gethostbyname(socket.gethostname()), buffersize=1024, loginName=None, loginPW=None, maxConnections=1, Seculevel=0, BigServerBuffersize=536870912, BigServerPort=0, welcomeMessage="", thisBig=False):
         """
         ip
         ip of the server
