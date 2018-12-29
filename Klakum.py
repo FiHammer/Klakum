@@ -361,8 +361,9 @@ class Server(threading.Thread):
         write = "(" + datetime.datetime.now().strftime("%H:%M:%S:%f") + ") " + "(" + self.Status + ") " + data
         self.Log.append(write)
         print("[Log] " + write)
+        self.save()
 
-    def save(self, directory: str):
+    def save(self):
         file_log_raw = open("Log.txt", "w")
         for x in self.Log:
             file_log_raw.write(x)
@@ -478,7 +479,7 @@ def reacter(mess):
             relay_surge_list[relay_id].switch()
 
 
-Klakum_Server = Server(1007, reacter, ip="192.168.2.107")
+Klakum_Server = Server(1007, reacter, ip="192.168.2.107", BigServerBuffersize=0)
 Klakum_Server.start()
 Klakum_Server.join()
 
