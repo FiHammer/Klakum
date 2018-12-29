@@ -371,12 +371,12 @@ class Server(threading.Thread):
 
         file_logsend_raw = open("LogSend.txt", "w")
         for x in self.Logsend:
-            file_logsend_raw.write(x)
+            file_logsend_raw.write(x.decode("UTF-8"))
         file_logsend_raw.close()
 
         file_logrece_raw = open("LogReceive.txt", "w")
         for x in self.Logrece:
-            file_logrece_raw.write(x)
+            file_logrece_raw.write(x.decode("UTF-8"))
         file_logrece_raw.close()
 
     def exit(self, sendM=True):
