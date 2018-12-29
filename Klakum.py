@@ -478,7 +478,7 @@ def reacter(mess):
             relay_surge_list[relay_id].switch()
 
 
-Klakum_Server = Server(107, reacter)
+Klakum_Server = Server(207, reacter, ip="192.168.2.107")
 Klakum_Server.start()
 Klakum_Server.join()
 
